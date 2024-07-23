@@ -1,10 +1,10 @@
+using MapeamentoTerritorio.Areas.Identity;
+using MapeamentoTerritorio.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Territorio.Areas.Identity;
-using Territorio.Data;
 
-namespace Territorio
+namespace MapeamentoTerritorio
 {
     public class Program
     {
@@ -12,13 +12,14 @@ namespace Territorio
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseNpgsql(connectionString));
 
+            builder.Services.AddControllersWithViews();
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -27,11 +28,12 @@ namespace Territorio
 
             builder.Services.AddServerSideBlazor();
             builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
-            builder.Services.AddSingleton<WeatherForecastService>();
+            
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 
-            
+
             if(app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();

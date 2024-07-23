@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Territorio", "Territorio\Territorio.csproj", "{D44CE955-FACF-4A06-A0D8-8B15F22E7D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapeamentoTerritorio", "Territorio\MapeamentoTerritorio.csproj", "{D44CE955-FACF-4A06-A0D8-8B15F22E7D83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
