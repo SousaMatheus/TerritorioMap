@@ -1,18 +1,23 @@
-﻿using MapeamentoTerritorio.Models;
+﻿using MapeamentoTerritorio.ViewModels;
 
 namespace MapeamentoTerritorio.Interfaces
 {
     public interface IMapaService : IDisposable
     {
-        Task AdicionarMapa(Mapa mapa);
-        Task AdicionarQuadra(Quadra quadra);
-        Task AdicionarRua(Rua rua);
-        Task AdicionarCasa(Casa casa);
+        Task<IEnumerable<MapaViewModel.Retorno>> ObterMapasAsync();
+        Task<IEnumerable<MapaViewModel.Retorno>> ObterQuadrasAsync();
+        Task<IEnumerable<MapaViewModel.Retorno>> ObterRuasAsync();
+        Task<IEnumerable<MapaViewModel.Retorno>> ObterCasasAsync();
 
-        Task AtualizarMapa(Mapa mapa);
-        Task AtualizarQuadra(Quadra quadra);
-        Task AtualizarRua(Rua rua);
-        Task AtualizarCasa(Casa casa);
+        Task AdicionarMapa(MapaViewModel.Envio mapa);
+        Task AdicionarQuadra(QuadraViewModel.Envio quadra);
+        Task AdicionarRua(RuaViewModel.Envio rua);
+        Task AdicionarCasa(CasaViewModel.Envio casa);
+
+        Task AtualizarMapa(MapaViewModel.Envio mapa);
+        Task AtualizarQuadra(QuadraViewModel.Envio quadra);
+        Task AtualizarRua(RuaViewModel.Envio rua);
+        Task AtualizarCasa(CasaViewModel.Envio casa);
 
         Task RemoverMapa(Guid id);
         Task RemoverQuadra(Guid id);

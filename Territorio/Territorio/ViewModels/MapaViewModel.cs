@@ -21,5 +21,9 @@ namespace MapeamentoTerritorio.ViewModels
         public DateTime PenultimaVezTrabalhado { get; set; }
         public DateTime AntePenultimaVezTrabalhado { get; set; }
         public DateTime PreAntePenultimaVezTrabalhado { get; set; }
+
+
+        public class Envio : MapaViewModel { }
+        public class Retorno : MapaViewModel { }
     }
 }

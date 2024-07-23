@@ -21,5 +21,9 @@ namespace MapeamentoTerritorio.ViewModels
         public string NumeroComercial { get; set; }
         
         public List<Casa> Casas { get; set; }
+
+
+        public class Retorno : RuaViewModel { }
+        public class Envio : RuaViewModel { }
     }
 }

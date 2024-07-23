@@ -14,5 +14,9 @@ namespace MapeamentoTerritorio.ViewModels
         public int Numero { get; set; }
 
         public List<Rua> Ruas { get; set; }
+
+
+        public class Envio : QuadraViewModel { }
+        public class Retorno : QuadraViewModel { }
     }
 }
