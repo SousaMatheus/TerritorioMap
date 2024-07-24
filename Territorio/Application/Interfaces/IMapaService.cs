@@ -1,6 +1,7 @@
-﻿using MapeamentoTerritorio.ViewModels;
+﻿using Application.ViewModels;
+using ViewModels;
 
-namespace MapeamentoTerritorio.Interfaces
+namespace Application.Interfaces
 {
     public interface IMapaService : IDisposable
     {

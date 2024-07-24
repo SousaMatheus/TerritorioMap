@@ -1,4 +1,4 @@
-﻿namespace MapeamentoTerritorio.Models
+﻿namespace Domain.Models
 {
     public class Quadra : Entity
     {

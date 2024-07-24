@@ -1,8 +1,7 @@
-﻿using AutoMapper;
-using MapeamentoTerritorio.Models;
-using MapeamentoTerritorio.ViewModels;
-
-namespace MapeamentoTerritorio.AutoMapper
+﻿using Application.ViewModels;
+using AutoMapper;
+using Domain.Models;
+namespace Application.AutoMapper
 {
     public class AutoMapper : Profile
     {

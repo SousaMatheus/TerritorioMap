@@ -1,8 +1,7 @@
-﻿using MapeamentoTerritorio.Models;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MapeamentoTerritorio.ViewModels
+namespace Application.ViewModels
 {
     public class RuaViewModel
     {
@@ -20,7 +19,7 @@ namespace MapeamentoTerritorio.ViewModels
         [DisplayName("Número Comercial")]
         public string NumeroComercial { get; set; }
         
-        public List<Casa> Casas { get; set; }
+        public List<CasaViewModel> Casas { get; set; }
 
 
         public class Retorno : RuaViewModel { }

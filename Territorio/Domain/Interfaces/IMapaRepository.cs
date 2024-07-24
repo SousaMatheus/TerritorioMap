@@ -1,6 +1,6 @@
-﻿using MapeamentoTerritorio.Models;
+﻿using Domain.Models;
 
-namespace MapeamentoTerritorio.Interfaces
+namespace Domain.Interfaces
 {
     public interface IMapaRepository
     {

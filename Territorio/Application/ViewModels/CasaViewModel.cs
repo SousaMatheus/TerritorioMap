@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MapeamentoTerritorio.ViewModels
+namespace Application.ViewModels
 {
     public class CasaViewModel
     {

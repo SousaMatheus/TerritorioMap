@@ -1,8 +1,9 @@
-﻿using MapeamentoTerritorio.Models;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using ViewModels;
 
-namespace MapeamentoTerritorio.ViewModels
+
+namespace Application.ViewModels
 {
     public class QuadraViewModel
     {
@@ -13,7 +14,7 @@ namespace MapeamentoTerritorio.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public int Numero { get; set; }
 
-        public List<Rua> Ruas { get; set; }
+        public List<RuaViewModel> Ruas { get; set; }
 
 
         public class Envio : QuadraViewModel { }
