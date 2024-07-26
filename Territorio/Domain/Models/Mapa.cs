@@ -9,6 +9,7 @@
         public DateTime AntePenultimaVezTrabalhado { get; private set; }
         public DateTime PreAntePenultimaVezTrabalhado { get; private set; }
 
+
         public List<Quadra> Quadras { get; private set; }
     }
 }

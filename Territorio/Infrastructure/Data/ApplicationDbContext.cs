@@ -1,17 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Domain.Models;
+using Infrastructure.Data;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MapeamentoTerritorio.Models;
 
 namespace MapeamentoTerritorio.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        protected readonly IConfiguration Configuration;
-        public ApplicationDbContext(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -24,7 +19,6 @@ namespace MapeamentoTerritorio.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
         }
     }
 }

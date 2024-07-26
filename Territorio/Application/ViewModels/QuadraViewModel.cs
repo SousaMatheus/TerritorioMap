@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using ViewModels;
-
 
 namespace Application.ViewModels
 {

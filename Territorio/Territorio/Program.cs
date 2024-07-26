@@ -1,3 +1,4 @@
+using Infrastructure.Data;
 using MapeamentoTerritorio.Areas.Identity;
 using MapeamentoTerritorio.Data;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -16,14 +17,15 @@ namespace MapeamentoTerritorio
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(connectionString));
+            builder.Services.AddDbContext<ApplicationDbContext>(opt =>
+            opt.UseNpgsql(connectionString));
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddRazorPages();
 
             builder.Services.AddServerSideBlazor();

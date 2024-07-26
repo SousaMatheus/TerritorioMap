@@ -1,5 +1,4 @@
 ﻿using Application.ViewModels;
-using ViewModels;
 
 namespace Application.Interfaces
 {
