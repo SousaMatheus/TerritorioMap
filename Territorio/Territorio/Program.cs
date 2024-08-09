@@ -1,6 +1,6 @@
-using Infrastructure.Data;
+using Infrastructure.Context;
 using MapeamentoTerritorio.Areas.Identity;
-using MapeamentoTerritorio.Data;
+using MapeamentoTerritorio.Context;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

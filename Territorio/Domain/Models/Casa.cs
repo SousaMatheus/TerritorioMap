@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Domain.Models
+﻿namespace Domain.Models
 {
     public class Casa : Entity
     {
@@ -11,7 +9,6 @@ namespace Domain.Models
         public bool PodeBater { get; private set; }
 
 
-        [ForeignKey(nameof(Rua.Id))]
         public Guid RuaId { get; private set; }
         public Rua Rua { get; private set; }
     }

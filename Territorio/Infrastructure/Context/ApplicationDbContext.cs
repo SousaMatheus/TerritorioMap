@@ -1,9 +1,9 @@
 ﻿using Domain.Models;
-using Infrastructure.Data;
+using Infrastructure.Context;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace MapeamentoTerritorio.Data
+namespace MapeamentoTerritorio.Context
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

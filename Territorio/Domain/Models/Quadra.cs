@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Domain.Models
+﻿namespace Domain.Models
 {
     public class Quadra : Entity
     {
@@ -8,7 +6,6 @@ namespace Domain.Models
         public List<Rua> Ruas { get; private set; }
 
 
-        [ForeignKey(nameof(Mapa.Id))]
         public int MapaId { get; private set; }
         public Mapa Mapa { get; private set; }
     }
