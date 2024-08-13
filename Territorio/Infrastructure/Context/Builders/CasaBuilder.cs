@@ -9,7 +9,7 @@ namespace Infrastructure.Context.Builders
         public void Configure(EntityTypeBuilder<Casa> builder)
         {
             builder.HasKey(e => e.Id)
-                .HasName($"fk_{nameof(Casa)}");
+                .HasName($"PK_{nameof(Casa)}");
         }
     }
 }

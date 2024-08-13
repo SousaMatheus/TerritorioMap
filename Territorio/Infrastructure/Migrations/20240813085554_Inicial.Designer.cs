@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240809015613_Initial")]
-    partial class Initial
+    [Migration("20240813085554_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,10 +94,7 @@ namespace Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("MapaId")
-                        .HasColumnType("integer");
-
-                    b.Property<Guid>("MapaId1")
+                    b.Property<Guid>("MapaId")
                         .HasColumnType("uuid");
 
                     b.Property<int>("Numero")
@@ -105,7 +102,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MapaId1");
+                    b.HasIndex("MapaId");
 
                     b.ToTable("Quadras");
                 });
@@ -341,7 +338,7 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Domain.Models.Mapa", "Mapa")
                         .WithMany("Quadras")
-                        .HasForeignKey("MapaId1")
+                        .HasForeignKey("MapaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

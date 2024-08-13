@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -180,15 +180,14 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Numero = table.Column<int>(type: "integer", nullable: false),
-                    MapaId = table.Column<int>(type: "integer", nullable: false),
-                    MapaId1 = table.Column<Guid>(type: "uuid", nullable: false)
+                    MapaId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Quadras", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Quadras_Mapas_MapaId1",
-                        column: x => x.MapaId1,
+                        name: "FK_Quadras_Mapas_MapaId",
+                        column: x => x.MapaId,
                         principalTable: "Mapas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -279,9 +278,9 @@ namespace Infrastructure.Migrations
                 column: "RuaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Quadras_MapaId1",
+                name: "IX_Quadras_MapaId",
                 table: "Quadras",
-                column: "MapaId1");
+                column: "MapaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ruas_QuadraId",
